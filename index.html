@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gun Shooter 2000</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="loginScreen" class="panel">
+        <div class="logo-box">
+          <span class="logo-accent">[</span>
+          <h1>GUN SHOOTER 2000</h1>
+          <span class="logo-accent">]</span>
+        </div>
+        <p class="subtitle">Arena survival. Wave after wave. Bosses. Score chase. No mercy.</p>
+
+        <form id="authForm">
+          <label>
+            Username
+            <input id="username" type="text" maxlength="16" placeholder="Enter your name" required />
+          </label>
+          <label>
+            Password
+            <input id="password" type="password" maxlength="24" placeholder="Choose a password" required />
+          </label>
+          <button type="submit" class="primary-btn">Enter the arena</button>
+        </form>
+
+        <p id="loginStatus" class="status-text" aria-live="polite"></p>
+      </div>
+
+      <div id="gameScreen" class="hidden">
+        <header class="hud">
+          <div class="hud-item">
+            <span class="label">Player</span>
+            <strong id="playerName">-</strong>
+          </div>
+          <div class="hud-item">
+            <span class="label">Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="hud-item">
+            <span class="label">Wave</span>
+            <strong id="wave">1</strong>
+          </div>
+          <div class="hud-item">
+            <span class="label">Best</span>
+            <strong id="bestScore">0</strong>
+          </div>
+          <div class="hud-item wide">
+            <span class="label">Health</span>
+            <div class="bar-bg">
+              <div id="healthBar" class="bar health-bar"></div>
+            </div>
+          </div>
+        </header>
+
+        <canvas id="gameCanvas" width="960" height="540"></canvas>
+
+        <div id="gameOverlay" class="overlay hidden">
+          <div class="overlay-card">
+            <h2 id="overlayTitle">Game Over</h2>
+            <p id="overlayText">The arena broke you.</p>
+            <button id="restartBtn" class="primary-btn">Play again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
